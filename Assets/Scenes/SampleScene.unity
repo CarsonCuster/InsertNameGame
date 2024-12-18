@@ -1359,8 +1359,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 154eb26e80c85b848910b58840a04ae9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4011,7 +4011,7 @@ MonoBehaviour:
   targetIndicator: {fileID: 338304991}
   woodLetters: 
   typingOn: 0
-  timeToReachTarget: 2
+  timeToReachTarget: 0.01
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4040,6 +4040,17 @@ MonoBehaviour:
   targetDestroyedSFX: {fileID: 479805743}
   genericDamage: {fileID: 8300000, guid: d258aaf781cc6cc488b7d30774e1022c, type: 3}
   genericTargetDestroyed: {fileID: 8300000, guid: 9af5909b7c60bca49a3dbc3390e8125c, type: 3}
+  names:
+  - Alex
+  - Colin
+  - Evan
+  - Jayden
+  - Jon
+  - Luk
+  - Moses
+  - Nick
+  - Tyler
+  - Zach
   canvas: {fileID: 1922552755}
   gameOverMenu: {fileID: 1894425263}
   mainMenu: {fileID: 2104465589}
@@ -4056,6 +4067,7 @@ MonoBehaviour:
   currentTheme: {fileID: 11400000, guid: 088f70f78fea9b84c9b6a94165f4ab22, type: 2}
   themeBehaviorHolder: {fileID: 1437211381}
   themeBehavior: {fileID: 1437211393}
+  isAbleToSpawnBosses: 0
   playerScore: 0
   background: {fileID: 1627738862}
   backgroundRenderer: {fileID: 0}
@@ -8780,8 +8792,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 154eb26e80c85b848910b58840a04ae9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9796,7 +9808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2820717916479035777, guid: 266f2289b4fe7d9448a4e5483e753a0d, type: 3}
       propertyPath: timeBetweenSpawns
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2820717916479035777, guid: 266f2289b4fe7d9448a4e5483e753a0d, type: 3}
       propertyPath: isAbleToSpawnBosses

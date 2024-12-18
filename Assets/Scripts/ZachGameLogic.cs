@@ -27,6 +27,7 @@ public class ZachGameLogic : MonoBehaviour
     public AudioClip genericDamage;
     public AudioClip genericTargetDestroyed;
     [Header("Menus")]
+    public List<string> names;
     [SerializeField] Canvas canvas;
     public GameObject gameOverMenu;
     public GameObject mainMenu;
@@ -58,6 +59,7 @@ public class ZachGameLogic : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 120;
+        //SetStartingTheme();
         gameOverMenu.SetActive(false);
         mainMenu.SetActive(true);
         gameAudioSource.clip = currentTheme.gameMusic;
@@ -83,6 +85,16 @@ public class ZachGameLogic : MonoBehaviour
         }
         backgroundRenderer = background.GetComponent<MeshRenderer>();
         //themeBehavior.OnThemeEnter();
+    }
+    void SetStartingTheme()
+    {
+        int nameIndex = Random.Range(0, names.Count);
+        nameText.text = $"{names[nameIndex].ToUpper()}'S";
+        themeBehavior = themeBehaviorHolder.GetComponent($"{names[nameIndex]}Theme") as ThemeSpecificContent;
+        ThemeContainer obj = Resources.Load<ThemeContainer>($"{names[nameIndex]}/{names[nameIndex]}ThemeContainer");;
+        currentTheme = obj;
+        themeBehavior.OnThemeEnter();
+
     }
 
     // Update is called once per frame

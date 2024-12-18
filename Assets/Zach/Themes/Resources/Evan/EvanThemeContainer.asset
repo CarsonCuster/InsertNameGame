@@ -57,8 +57,8 @@ MonoBehaviour:
   background2: {fileID: 2800000, guid: d1e43e987cfda6541b2b613749b5c398, type: 3}
   background3: {fileID: 2800000, guid: 747dc00abc5662c41a55558fa468d2a3, type: 3}
   background4: {fileID: 2800000, guid: e404cee18f0ea514e94c1fc584bd7326, type: 3}
-  speedModifier: 1
-  secondsBetweenSpawnsModifier: 1
+  speedModifier: 0.1
+  secondsBetweenSpawnsModifier: 2
   menuTextColor: {r: 0.533014, g: 0, b: 0.735849, a: 1}
   meshHasSpecificMaterial: 0
   hasThemeSpecificGameOver: 0

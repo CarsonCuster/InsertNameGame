@@ -31,12 +31,14 @@ public class ThemeSpecificContent : MonoBehaviour
     public virtual void StartGame()
     {
         zachGameLogic.background.SetActive(true);
+        //zachGameLogic.ResetBackground();
     }
     public virtual void Restart()
     {  
         zachGameLogic.gameOverMenu.SetActive(false);
         zachGameLogic.gameOverAudioSource.Stop();
         zachGameLogic.gameAudioSource.Play();
+        zachGameLogic.ResetBackground();
     }
     public virtual void QuitToMain()
     {

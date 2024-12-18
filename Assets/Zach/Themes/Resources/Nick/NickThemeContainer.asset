@@ -34,9 +34,12 @@ MonoBehaviour:
   gameMusic: {fileID: 8300000, guid: 6162cd5478b9a7a4bba37ae478e2c76e, type: 3}
   damageTaken: {fileID: 8300000, guid: 028f671ea4d0e8342a6777b9e08b228a, type: 3}
   loopGameOverMusic: 0
-  background: {fileID: 0}
-  speedModifier: 1
-  secondsBetweenSpawnsModifier: 0.5
+  background1: {fileID: 0}
+  background2: {fileID: 0}
+  background3: {fileID: 0}
+  background4: {fileID: 0}
+  speedModifier: 0.2
+  secondsBetweenSpawnsModifier: 1
   menuTextColor: {r: 0, g: 0.8301887, b: 0.3370595, a: 1}
   meshHasSpecificMaterial: 0
   hasThemeSpecificGameOver: 1
