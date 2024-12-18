@@ -37,12 +37,12 @@ public class NickTheme : ThemeSpecificContent
         zachGameLogic.typingTargeter.typingOn = false;
         zachGameLogic.woodSpawner.spawningEnabled = false;
         zachGameLogic.gameRunning = false;
-        StartCoroutine(cameraRoll());
+        //StartCoroutine(cameraRoll());
     }
     public override void Restart()
     {
         gameOverMenu.SetActive(false);
-        cam.transform.eulerAngles = new Vector3(0f,0f, camStartingZRot);
+        //cam.transform.eulerAngles = new Vector3(0f,0f, camStartingZRot);
     }
     public override void OnThemeEnter()
     {
@@ -84,6 +84,6 @@ public class NickTheme : ThemeSpecificContent
     {
         base.QuitToMain();
         gameOverMenu.SetActive(false);
-        cam.transform.eulerAngles = new Vector3(0f,0f, camStartingZRot);
+        //cam.transform.eulerAngles = new Vector3(0f,0f, camStartingZRot);
     }
 }

@@ -263,10 +263,10 @@ public class TypingTargeter : MonoBehaviour
     {
         isRunning = true;
         float progress = 0;
-        while(progress < timeToReachTarget)
+        while(progress < 0.5f)
         {
-            targetIndicator.transform.position = Vector3.Lerp(targetIndicator.transform.position, wood.gameObject.transform.position, progress / timeToReachTarget);
-            targetIndicator.transform.localScale = Vector3.Lerp(targetIndicator.transform.localScale, wood.transform.parent.gameObject.transform.localScale, progress / timeToReachTarget);
+            targetIndicator.transform.position = Vector3.Lerp(targetIndicator.transform.position, wood.gameObject.transform.position, progress / 0.5f);
+            targetIndicator.transform.localScale = Vector3.Lerp(targetIndicator.transform.localScale, wood.transform.parent.gameObject.transform.localScale, progress / 0.5f);
             progress += Time.deltaTime;
             yield return null;
         }

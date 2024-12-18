@@ -119,7 +119,7 @@ public class WoodBehavior : MonoBehaviour
         float progress = 0f;
         float rotTime = 3f;
         float rot;
-        float ang = 5f;
+        float ang = 30f;
         bool rotateLeft = UnityEngine.Random.Range(0, 2) == 0 ? true : false;
         if(rotateLeft) ang = -ang;
         while(progress < rotTime)
