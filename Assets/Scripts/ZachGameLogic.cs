@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
@@ -27,7 +28,7 @@ public class ZachGameLogic : MonoBehaviour
     public AudioClip genericDamage;
     public AudioClip genericTargetDestroyed;
     [Header("Menus")]
-    public List<string> names;
+    //public List<string> names;
     [SerializeField] Canvas canvas;
     public GameObject gameOverMenu;
     public GameObject mainMenu;
@@ -58,12 +59,13 @@ public class ZachGameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        backgroundRenderer = background.GetComponent<MeshRenderer>();
         Application.targetFrameRate = 120;
-        //SetStartingTheme();
+        SetStartingTheme();
         gameOverMenu.SetActive(false);
         mainMenu.SetActive(true);
-        gameAudioSource.clip = currentTheme.gameMusic;
-        gameOverAudioSource.clip = currentTheme.gameOverMusic;
+        // gameAudioSource.clip = currentTheme.gameMusic;
+        // gameOverAudioSource.clip = currentTheme.gameOverMusic;
         if(currentTheme.loopGameOverMusic) gameOverAudioSource.loop = true;
         else{
             gameOverAudioSource.loop = false;
@@ -83,18 +85,15 @@ public class ZachGameLogic : MonoBehaviour
         else{
             targetDestroyedSFX.clip = genericTargetDestroyed;
         }
-        backgroundRenderer = background.GetComponent<MeshRenderer>();
         //themeBehavior.OnThemeEnter();
     }
     void SetStartingTheme()
     {
-        int nameIndex = Random.Range(0, names.Count);
-        nameText.text = $"{names[nameIndex].ToUpper()}'S";
-        themeBehavior = themeBehaviorHolder.GetComponent($"{names[nameIndex]}Theme") as ThemeSpecificContent;
-        ThemeContainer obj = Resources.Load<ThemeContainer>($"{names[nameIndex]}/{names[nameIndex]}ThemeContainer");;
-        currentTheme = obj;
-        themeBehavior.OnThemeEnter();
-
+        int randomTheme = Random.Range(0, dropdown.options.Count);
+        TMPro.TMP_Dropdown.OptionData dropdownOption = dropdown.options[randomTheme];
+        dropdown.options.Remove(dropdownOption);
+        dropdown.options.Insert(0, dropdownOption);
+        UpdateTheme();
     }
 
     // Update is called once per frame
@@ -106,6 +105,7 @@ public class ZachGameLogic : MonoBehaviour
             GameObject woodToDelete = healthObjs[healthObjs.Count - 1];
             healthObjs.Remove(woodToDelete);
             Destroy(woodToDelete);
+            //DestroyCloseTargets();
             themeBehavior.OnDamageTake();
         }
         if(healthActive == 0 && !gameOverMenu.activeInHierarchy && !mainMenu.activeInHierarchy && gameRunning)
@@ -116,6 +116,16 @@ public class ZachGameLogic : MonoBehaviour
         //silly haha time
         themeBehavior.UpdateThings();
     }
+    // public void DestroyCloseTargets()
+    // {
+    //     foreach(WoodBehavior target in typingTargeter.activeWoodBlocks)
+    //     {
+    //         if(Vector3.Distance(target.transform.position, transform.position) < 5f)
+    //         {
+    //             Destroy(target.transform.parent.gameObject);
+    //         }
+    //     }
+    // }
 
     public void RestartGame()
     {
@@ -178,7 +188,7 @@ public class ZachGameLogic : MonoBehaviour
 
     public void QuitGame()
     {
-        
+        Application.Quit();
     }
     public void QuitToMainMenu()
     {

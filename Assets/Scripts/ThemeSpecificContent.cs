@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ThemeSpecificContent : MonoBehaviour
 {
-    [HideInInspector]
     public ZachGameLogic zachGameLogic;
     [HideInInspector]
     public TypingTargeter typingTargeter;
@@ -61,9 +60,7 @@ public class ThemeSpecificContent : MonoBehaviour
     }
     public virtual void OnThemeExit(){}
     public virtual void OnThemeEnter()
-    {  
-        zachGameLogic.gameAudioSource.clip = themeContainer.gameMusic;
-        zachGameLogic.gameAudioSource.Play();
+    {
         if(themeContainer.loopGameOverMusic) zachGameLogic.gameOverAudioSource.loop = true;
         else{
             zachGameLogic.gameOverAudioSource.loop = false;
@@ -84,6 +81,8 @@ public class ThemeSpecificContent : MonoBehaviour
             zachGameLogic.backgroundRenderer.material.SetTexture("_Texture3", themeContainer.background3);
             zachGameLogic.backgroundRenderer.material.SetTexture("_Texture4", themeContainer.background4);
         }
+        zachGameLogic.gameAudioSource.clip = themeContainer.gameMusic;
+        zachGameLogic.gameAudioSource.Play();
     }
     public virtual void OnTargetDestroy()
     {
