@@ -56,6 +56,7 @@ public class ZachGameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 800;
         gameOverMenu.SetActive(false);
         mainMenu.SetActive(true);
         gameAudioSource.clip = currentTheme.gameMusic;
