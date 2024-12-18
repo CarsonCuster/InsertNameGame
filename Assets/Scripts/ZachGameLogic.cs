@@ -45,6 +45,7 @@ public class ZachGameLogic : MonoBehaviour
     public ThemeContainer currentTheme;
     public GameObject themeBehaviorHolder;
     public ThemeSpecificContent themeBehavior;
+    public bool isAbleToSpawnBosses = false;
     [HideInInspector]
     public int playerScore;
     private IEnumerator currentSkyboxLerp;
@@ -56,7 +57,7 @@ public class ZachGameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 800;
+        Application.targetFrameRate = 60;
         gameOverMenu.SetActive(false);
         mainMenu.SetActive(true);
         gameAudioSource.clip = currentTheme.gameMusic;
@@ -98,6 +99,7 @@ public class ZachGameLogic : MonoBehaviour
         if(healthActive == 0 && !gameOverMenu.activeInHierarchy && !mainMenu.activeInHierarchy && gameRunning)
         {
             themeBehavior.OnGameOver();
+            isAbleToSpawnBosses = false;
         }
         //silly haha time
         themeBehavior.UpdateThings();

@@ -10,7 +10,6 @@ public class WoodSpawner : MonoBehaviour
     public ZachGameLogic zachGameLogic;
     public Camera playerCamera;
     public float timeBetweenSpawns;
-    public bool isAbleToSpawnBosses = false;
     public float chanceToSpawnBoss;
     public float chanceToSpawn2;
     public float chanceToSpawn3;
@@ -39,9 +38,9 @@ public class WoodSpawner : MonoBehaviour
         {
             if(time > timeBetweenSpawns + zachGameLogic.currentTheme.secondsBetweenSpawnsModifier && spawningEnabled)
             {
-                if(isAbleToSpawnBosses && Random.Range(0f, 1f) <= chanceToSpawnBoss && !lastSpawnBoss)
+                if(zachGameLogic.isAbleToSpawnBosses && Random.Range(0f, 1f) <= chanceToSpawnBoss && !lastSpawnBoss)
                 {
-                    SpawnObjs(1, 30000f, true);
+                    SpawnObjs(1, 2200f, true);
                     lastSpawn3 = false;
                     lastSpawn2 = false;
                     lastSpawnBoss = true;
@@ -50,7 +49,7 @@ public class WoodSpawner : MonoBehaviour
                 }
                 else if(Random.Range(0f,1f) <= chanceToSpawn3 && !lastSpawn3)
                 {
-                    SpawnObjs(3, 24000f);
+                    SpawnObjs(3, 2800f);
                     lastSpawn3 = true;
                     lastSpawn2 = false;
                     lastSpawnBoss = false;
@@ -59,7 +58,7 @@ public class WoodSpawner : MonoBehaviour
                 }
                 else if(Random.Range(0f,1f) <= chanceToSpawn2 && !lastSpawn2)
                 {
-                    SpawnObjs(2, 18000f);
+                    SpawnObjs(2, 2200f);
                     lastSpawn2 = true;
                     lastSpawn3 = false;
                     lastSpawnBoss = false;
@@ -67,7 +66,7 @@ public class WoodSpawner : MonoBehaviour
                     time = 0;                                                                                                                                                                                                                                                                                                                                                                                          
                 }
                 else{
-                    SpawnObjs(1, 12000f);
+                    SpawnObjs(1, 1600f);
                     lastSpawn2 = false;
                     lastSpawn3 = false;
                     lastSpawnBoss = false;
@@ -83,7 +82,7 @@ public class WoodSpawner : MonoBehaviour
             else if(zachGameLogic.playerScore == 50 && changeTimeBetweenSpawns == 0.3f)
             {
                 changeTimeBetweenSpawns += 0.3f;
-                isAbleToSpawnBosses = true;
+                zachGameLogic.isAbleToSpawnBosses = true;
             }
             else if(zachGameLogic.playerScore == 100 && changeTimeBetweenSpawns == 0.6f)
             {
