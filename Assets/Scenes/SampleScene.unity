@@ -4087,8 +4087,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   comboObject: {fileID: 1703058216}
+  comboText: {fileID: 1925614118}
   comboAmount: {fileID: 1410447441}
-  animator: {fileID: 1410447440}
+  comboAmountanimator: {fileID: 1410447440}
+  comboTextAnimator: {fileID: 1925614122}
   currentCombo: 0
 --- !u!1 &990674684
 GameObject:
@@ -6729,6 +6731,7 @@ GameObject:
   - component: {fileID: 1410447442}
   - component: {fileID: 1410447441}
   - component: {fileID: 1410447440}
+  - component: {fileID: 1410447443}
   m_Layer: 0
   m_Name: Combo Amount
   m_TagString: Untagged
@@ -6752,7 +6755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349.19, y: 0}
+  m_AnchoredPosition: {x: 32.73761, y: 26.955551}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1410447440
@@ -6873,6 +6876,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410447438}
   m_CullTransparentMesh: 1
+--- !u!54 &1410447443
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410447438}
+  serializedVersion: 4
+  m_Mass: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &1421322535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6734938603270887003, guid: 44585535f38e12345a51b1083c269204, type: 3}
@@ -8375,13 +8405,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1703058217}
+  - component: {fileID: 1703058218}
   m_Layer: 0
-  m_Name: Combo
+  m_Name: Combo Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1703058217
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8390,19 +8421,42 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703058216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8.98}
+  m_LocalScale: {x: 0.002283704, y: 0.002283704, z: 0.002283704}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1410447439}
   - {fileID: 1925614119}
-  m_Father: {fileID: 1922552752}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.676, y: -0.16}
+  m_SizeDelta: {x: 713, y: 536}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!223 &1703058218
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703058216}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &1703166542
 GameObject:
   m_ObjectHideFlags: 0
@@ -9606,7 +9660,6 @@ RectTransform:
   - {fileID: 2030054512}
   - {fileID: 1009584514}
   - {fileID: 1028824521}
-  - {fileID: 1703058217}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -9689,6 +9742,7 @@ GameObject:
   - component: {fileID: 1925614121}
   - component: {fileID: 1925614120}
   - component: {fileID: 1925614122}
+  - component: {fileID: 1925614123}
   m_Layer: 0
   m_Name: Combo
   m_TagString: Untagged
@@ -9703,7 +9757,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925614118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9712,7 +9766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 439.16, y: 0}
+  m_AnchoredPosition: {x: 142.28137, y: 26.955551}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925614120
@@ -9833,6 +9887,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!54 &1925614123
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925614118}
+  serializedVersion: 4
+  m_Mass: 0.2
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2030054511
 GameObject:
   m_ObjectHideFlags: 0
@@ -10363,3 +10444,4 @@ SceneRoots:
   - {fileID: 1437211392}
   - {fileID: 1166686415}
   - {fileID: 1627738866}
+  - {fileID: 1703058217}
