@@ -37,7 +37,7 @@ MonoBehaviour:
   background1: {fileID: 2800000, guid: 3396f0aa49e4e6a41bc9489d63bd4f8d, type: 3}
   background2: {fileID: 2800000, guid: 1198f8f7fa652954f9f6b2efe1925f51, type: 3}
   background3: {fileID: 2800000, guid: 2149fcdd40f989144b8a36f8df3ae899, type: 3}
-  background4: {fileID: 0}
+  background4: {fileID: 2800000, guid: 91c17c6fdb906b54ca6a30ea317c67a0, type: 3}
   speedModifier: 0.5
   secondsBetweenSpawnsModifier: 0
   menuTextColor: {r: 0.8615983, g: 0.3915094, b: 1, a: 1}

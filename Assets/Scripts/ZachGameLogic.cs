@@ -54,6 +54,7 @@ public class ZachGameLogic : MonoBehaviour
     public GameObject background;
     [HideInInspector]
     public MeshRenderer backgroundRenderer;
+    private float nextXPos;
 
     
     // Start is called before the first frame update
@@ -162,7 +163,6 @@ public class ZachGameLogic : MonoBehaviour
 
     public void SetHealth(int h)
     {
-        float nextXPos = new float();
         healthBeforeChange = h;
         healthActive = h;
         for(int i = new int(); i < h; i++)
@@ -179,10 +179,10 @@ public class ZachGameLogic : MonoBehaviour
         healthActive += h;
         for(int i = new int(); i < h; i++)
         {
-            GameObject obj = Instantiate(healthObj);
+            GameObject obj = Instantiate(healthObj, canvas.transform);
             RectTransform rectTransform = obj.GetComponent<RectTransform>();
-            obj.transform.position = healthObjs[healthObjs.Count - 1].transform.position + new Vector3(57.30606f, 0f,0f);
-            obj.transform.SetParent(canvas.transform);
+            obj.transform.position = healthStartingTransform.position + new Vector3(nextXPos, 0f,0f);
+            nextXPos += healthStartingTransform.position.x + 15f;
             healthObjs.Add(obj);
         }
     }
