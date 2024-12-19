@@ -39,7 +39,7 @@ MonoBehaviour:
   background3: {fileID: 0}
   background4: {fileID: 0}
   speedModifier: 0.2
-  secondsBetweenSpawnsModifier: 1
+  secondsBetweenSpawnsModifier: 0.5
   menuTextColor: {r: 0, g: 0.8301887, b: 0.3370595, a: 1}
   meshHasSpecificMaterial: 0
   hasThemeSpecificGameOver: 1
