@@ -92,6 +92,11 @@ public class WoodSpawner : MonoBehaviour
         // else if(zachGameLogic.settingsMenu.activeInHierarchy){
         //     SpawnObjs(1, 1f);
         // }
+
+        if(!zachGameLogic.gameRunning && changeTimeBetweenSpawns != 0f)
+        {
+            changeTimeBetweenSpawns = 0f;
+        }
     }
 
 
