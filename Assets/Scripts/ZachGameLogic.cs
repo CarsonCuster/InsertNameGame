@@ -113,6 +113,7 @@ public class ZachGameLogic : MonoBehaviour
         if(healthActive == 0 && !gameOverMenu.activeInHierarchy && !mainMenu.activeInHierarchy && gameRunning)
         {
             themeBehavior.OnGameOver();
+            nextXPos = 0f;
             isAbleToSpawnBosses = false;
         }
         //silly haha time
