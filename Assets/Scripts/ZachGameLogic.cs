@@ -27,7 +27,7 @@ public class ZachGameLogic : MonoBehaviour
     public AudioSource targetDestroyedSFX;
     public AudioClip genericDamage;
     public AudioClip genericTargetDestroyed;
-    [Header("Menus")]
+    [Header("UI")]
     //public List<string> names;
     [SerializeField] Canvas canvas;
     public GameObject gameOverMenu;
@@ -107,6 +107,7 @@ public class ZachGameLogic : MonoBehaviour
             Destroy(woodToDelete);
             //DestroyCloseTargets();
             themeBehavior.OnDamageTake();
+            typingTargeter.comboTracker.currentCombo = 0;
         }
         if(healthActive == 0 && !gameOverMenu.activeInHierarchy && !mainMenu.activeInHierarchy && gameRunning)
         {

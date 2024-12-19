@@ -9,6 +9,7 @@ using UnityEngine;
 public class TypingTargeter : MonoBehaviour
 {
     public List<WoodBehavior> activeWoodBlocks;
+    public ComboTracker comboTracker;
     private ZachGameLogic zachGameLogic;
     public GameObject targetIndicator;
     private WoodBehavior currentTarget;
@@ -105,6 +106,7 @@ public class TypingTargeter : MonoBehaviour
                     compareString += a;
                     ChangeCharColor(Color.red);
                     currentLetterPos++;
+                    comboTracker.currentCombo = 0;
                     // Attempted to change to char at the position the player messed up at. Turns out being much more difficult than I thought it would be. Cutting for now
 
                     // char[] chars = currentTarget.text.text.ToCharArray();
@@ -120,6 +122,7 @@ public class TypingTargeter : MonoBehaviour
                 {
                     compareString += a;
                     ChangeCharColor(Color.green);
+                    comboTracker.currentCombo++;
                     currentLetterPos++;
                 }
             }
