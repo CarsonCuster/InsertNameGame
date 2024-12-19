@@ -7,6 +7,8 @@ For most people this will seem like a very odd mashup of different things that d
 
 Merry Christmas!
 
+(I do not know if the Mac build works as I do not have a machine to test it on)
+
 ## How to Play
 
 - Type the words underneath the targets to prevent them from reaching you
@@ -27,3 +29,8 @@ Merry Christmas!
 
 ### Special Controls (only available in one game. No spoilers)
 - L-Ctrl: Buy Health
+
+
+# [Download Link](https://drive.google.com/drive/folders/1XQakw_-6X_nxeZJ_WMCCNLq9jg6URDDw?dmr=1&ec=wgc-drive-globalnav-goto)
+
+
